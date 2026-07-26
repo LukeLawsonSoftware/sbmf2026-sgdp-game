@@ -1,0 +1,38 @@
+{
+   "resources" : [
+    {
+        "name" : 1
+    },
+    {
+        "name" : 2
+    },
+    {
+        "name" : 3
+    },
+    {
+        "name" : 4
+    }
+   ],
+   "agents" : [
+    {
+        "name" : 1,
+        "goal" : 2,
+        "accessible_resources" : [1, 4]
+    },
+    {
+        "name" : 2,
+        "goal" : 2,
+        "accessible_resources" : [1, 2]
+    },
+    {
+        "name" : 3,
+        "goal" : 2,
+        "accessible_resources" : [2, 3]
+    },
+    {
+        "name" : 4,
+        "goal" : 2,
+        "accessible_resources" : [3, 4]
+    }
+   ]
+}
