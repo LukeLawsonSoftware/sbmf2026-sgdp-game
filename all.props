@@ -1,0 +1,9 @@
+<<a1>> R{"timer"}min=? [F "a1GoalAchieved" ]
+
+<<a2>> R{"timer"}min=? [F "a2GoalAchieved" ]
+
+<<a3>> R{"timer"}min=? [F "a3GoalAchieved" ]
+
+<<a4>> R{"timer"}min=? [F "a4GoalAchieved" ]
+
+<<a5>> R{"timer"}min=? [F "a5GoalAchieved" ]

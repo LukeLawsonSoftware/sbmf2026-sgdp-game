@@ -125,7 +125,7 @@ def _build_resource_module(config : dict, resource_idx : int):
 
         # 2. Release actions for any OTHER (accessible) resource
         for other_resource in agent["accessible_resources"]:
-            if other_resource != accessible_resource:
+            if other_resource != resource["name"]:
                 agent_actions.append(f'a{agent_name}_rel_r{other_resource}')
 
         # 3. Idle actions
@@ -140,10 +140,10 @@ def _build_resource_module(config : dict, resource_idx : int):
     action_combinations = list(product(*possibly_concurrent_actions.values()))
     
     def _is_relevant_lhs(action_combination):
-        return any(f'_req_r{resource["name"]}' in action for action in action_combination)
+        return any(action.endswith(f'_req_r{resource["name"]}') for action in action_combination)
 
     def _determine_rhs(action_combination):
-        competing_agent_full_names = [action.split("_")[0] for action in action_combination if f'_req_r{resource["name"]}' in action]
+        competing_agent_full_names = [action.split("_")[0] for action in action_combination if action.endswith(f'_req_r{resource["name"]}')]
         num_competing_agents = len(competing_agent_full_names)
         if num_competing_agents > 1:
             return ' + '.join([f'(1-r{resource["name"]}Fail)/{num_competing_agents} : (r{resource["name"]}\'={agent_full_name}Num)' for agent_full_name in competing_agent_full_names]) + f' + r{resource["name"]}Fail : (r{resource["name"]}\'=0);'

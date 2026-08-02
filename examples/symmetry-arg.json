@@ -1,0 +1,51 @@
+{
+   "resources" : [
+    {
+        "name" : 1,
+        "failure_rate" : 0.025
+    },
+    {
+        "name" : 2,
+        "failure_rate" : 0.05
+    },
+    {
+        "name" : 3,
+        "failure_rate" : 0.2
+    },
+    {
+        "name" : 4,
+        "failure_rate" : 0.1
+    },
+    {
+        "name" : 5,
+        "failure_rate" : 0.1
+    }
+   ],
+   "agents" : [
+    {
+        "name" : 1,
+        "goal" : 2,
+        "accessible_resources" : [1, 2, 4]
+    },
+    {
+        "name" : 2,
+        "goal" : 2,
+        "accessible_resources" : [1, 2, 5]
+    },
+    {
+        "name" : 3,
+        "goal" : 2,
+        "accessible_resources" : [1, 3]
+    },
+    {
+        "name" : 4,
+        "goal" : 1,
+        "accessible_resources" : [4]
+    },
+    {
+        "name" : 5,
+        "goal" : 1,
+        "accessible_resources" : [5]
+    }
+   ]
+}
